@@ -3,22 +3,27 @@
 #include <stdio.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there */
+/** 
+*main - Determines if a number is positive, negative or Zero
+*/
 int main(void)
 {
-	int n;
+        int n;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
-	if (n > 0){
-		printf("%d\n is positive", n); 
-	} else if (n < 0){
-		printf("%d\n is negative", n);
-	} else if (n == 0){
-		printf("%d\n is zero", n);
-	} else {
-		printf("%d\n", n);
-	}
-	return (0);
+        srand(time(0));
+        n = rand() - RAND_MAX / 2;
+        
+        if (n > 0)
+        {
+                printf("%d is positive\n", n);
+        }
+        else if (n == 0)
+        {
+                printf("%d is zero\n", n);
+        }
+        else
+        {
+                printf("%d is negative\n", n);
+        }
+        return (0);
 }
