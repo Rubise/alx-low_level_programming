@@ -1,1 +1,1 @@
-Solution to C Structures and typedef
+Solutions to C Structures and typedef
