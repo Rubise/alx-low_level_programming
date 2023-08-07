@@ -13,8 +13,8 @@
  */
 void print_addr(char *ptr)
 {
-	int i;
-	int begin;
+	int j;
+	int start;
 	char sys;
 
 	printf("  Entry point address:               0x");
@@ -22,14 +22,14 @@ void print_addr(char *ptr)
 	sys = ptr[4] + '0';
 	if (sys == '1')
 	{
-		begin = 26;
+		start = 26;
 		printf("80");
-		for (i = begin; i >= 22; i--)
+		for (j = start; j >= 22; j--)
 		{
-			if (ptr[i] > 0)
-				printf("%x", ptr[i]);
-			else if (ptr[i] < 0)
-				printf("%x", 256 + ptr[i]);
+			if (ptr[j] > 0)
+				printf("%x", ptr[j]);
+			else if (ptr[j] < 0)
+				printf("%x", 256 + ptr[j]);
 		}
 		if (ptr[7] == 6)
 			printf("00");
@@ -37,14 +37,14 @@ void print_addr(char *ptr)
 
 	if (sys == '2')
 	{
-		begin = 26;
-		for (i = begin; i > 23; i--)
+		start = 26;
+		for (j = start; j > 23; j--)
 		{
-			if (ptr[i] >= 0)
-				printf("%02x", ptr[i]);
+			if (ptr[j] >= 0)
+				printf("%02x", ptr[j]);
 
-			else if (ptr[i] < 0)
-				printf("%02x", 256 + ptr[i]);
+			else if (ptr[j] < 0)
+				printf("%02x", 256 + ptr[j]);
 
 		}
 	}
@@ -142,12 +142,12 @@ void print_data(char *ptr)
  */
 void print_magic(char *ptr)
 {
-	int bytes;
+	int byt;
 
 	printf("  Magic:  ");
 
-	for (bytes = 0; bytes < 16; bytes++)
-		printf(" %02x", ptr[bytes]);
+	for (byt = 0; byt < 16; byt++)
+		printf(" %02x", ptr[byt]);
 
 	printf("\n");
 
