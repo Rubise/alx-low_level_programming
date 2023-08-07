@@ -12,7 +12,7 @@ int create_file(const char *filename, char *text_content)
 	int f;
 	int n;
 	int r;
-	
+
 	if (!filename)
 	{
 		return (-1);
